@@ -1,14 +1,17 @@
+// lets start implementing expresjs
 const express = require('express');
-const router = express.Router();
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-// Define route for the root path
-router.get('/', (req, res) => {
-  res.send('Welcome to the Express app!');
+// Middleware
+app.use(express.json());
+
+// Basic route
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
 });
 
-// Example API route
-router.get('/api/data', (req, res) => {
-  res.json({ message: 'This is some sample data.' });
+// Start server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
-
-module.exports = router;
