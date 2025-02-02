@@ -17,8 +17,8 @@ public class Amazon {
 	WebDriver driver= new ChromeDriver();
 	driver.manage().window().maximize();
 	driver.get("https://www.amazon.in/");
-	driver.findElement(By.id("twotabsearchtextbox")).sendKeys("redmi");
-	driver.findElement(By.id("nav-search-submit-button")).click();
+	driver.findElements(By.id("twotabsearchtextbox")).sendKeys("redmi");
+	driver.findElements(By.id("nav-search-submit-button")).click();
 	Thread.sleep(5000);
 
 	
